@@ -1,4 +1,6 @@
+import pytest
 
+from utils import get_last_values, get_formated_data
 
 
 def get_filtered_data(test_date):
@@ -63,3 +65,22 @@ def get_filtered_data(test_date):
             "to": "Счет 96527012349577388612"
         }
     ]
+
+
+
+def tet_get_values(test_data):
+    data = get_last_values(test_data,4)
+    assert [x["data"]for x in data] == ["2018-03-09T23:57:37.537412","2019-07-15T11:47:40.496961", "2019-01-05T00:52:30.108534", "2019-07-13T18:51:29.313309"]
+
+
+def test_formated_data(test_data):
+    data = get_formated_data(test_data)
+    assert data == ["19.11.2019 Перевод организации\nMaestro 7810 84 ** **** 5568 ->Счет ** 2869\n30153.72 руб",
+                   "13.11.2019 Перевод со счета на счет\nСчет 3861 14 ** **** 9794 -> Счет ** 8125\n62814.53 руб.",
+                   "30.10.2019 Перевод с карты на счет\nVisaGold 7756 67 ** **** 2839 -> Счет ** 9453\n23036.03 руб.",
+                   "29.09.2019 Перевод со счета на счет\nСчет 3542 14 ** **** 9637 -> Счет ** 4961\n45849.53 USD"
+                   ]
+
+
+
+
