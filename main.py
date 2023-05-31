@@ -6,7 +6,7 @@ def main():
     COUNT_LAST_VALUES = 5
 
     data = get_data()
-    data = get_filtered_data(data, filtered_empty_from=FILTERED_EMPTY_FROM)
+    data = get_filtered_data(data, filter_empty_from=FILTERED_EMPTY_FROM)
     data = get_last_values(data, count_last_values=COUNT_LAST_VALUES)
     data = get_formated_data(data)
     print('INFO: Вывод транзакций ...')
@@ -14,5 +14,5 @@ def main():
         print(row, end='\n\n')
 
 if __name__ == "__main__":
-    main
+    main()
 
