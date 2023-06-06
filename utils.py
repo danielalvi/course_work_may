@@ -8,7 +8,6 @@ def get_data():
     return data
 
 
-
 def get_filtered_data(data, filter_empty_from=False):
 
     data = [x for x in data if "state" in x]
@@ -26,10 +25,10 @@ def get_last_values(data, count_last_values):
 
 
 
-def get_formated_data(data):
-    formated_data = []
+def get_formatted_data(data):
+    formatted_data = []
     for row in data:
-        date = datetime.strptime(row["date"],"%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
+        date = datetime.strptime(row["date"], "%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
         description = row["description"]
         recipient = f"{row['to'].split()[0]} ** {row['to'][-4:]}"
 
@@ -41,10 +40,10 @@ def get_formated_data(data):
             from_info = "".join(sender)
         else:
             from_info, from_bill = "", ""
-        formated_data.append(f"""\
+        formatted_data.append(f"""\
 {date} {description}
 {from_info} {from_bill} -> {recipient}
 {operation_amount}""")
-    return formated_data
+    return formatted_data
 
 

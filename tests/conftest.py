@@ -1,82 +1,47 @@
-import pytest as pytest
+import pytest
 
 
 @pytest.fixture
-def test_date():
-    return [
-        {
-            "id": 27192367,
-            "state": "CANCELED",
-            "date": "2018-12-24T20:16:18.819037",
-            "operationAmount": {
-                "amount": "991.49",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
-            "description": "Перевод со счета на счет",
-            "from": "Счет 71687416928274675290",
-            "to": "Счет 87448526688763159781"
-        },
-        {
-            "id": 921286598,
-            "state": "EXECUTED",
-            "date": "2018-03-09T23:57:37.537412",
-            "operationAmount": {
-                "amount": "25780.71",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
-            "description": "Перевод организации",
-            "from": "Счет 26406253703545413262",
-            "to": "Счет 20735820461482021315"
-        },
-        {
-            "id": 207126257,
-            "state": "EXECUTED",
-            "date": "2019-07-15T11:47:40.496961",
-            "operationAmount": {
-                "amount": "92688.46",
-                "currency": {
-                    "name": "USD",
-                    "code": "USD"
-                }
-            },
-            "description": "Открытие вклада",
-            "to": "Счет 35737585785074382265"
-        },
-        {
-            "id": 957763565,
-            "state": "EXECUTED",
-            "date": "2019-01-05T00:52:30.108534",
-            "operationAmount": {
-                "amount": "87941.37",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
-            "description": "Перевод со счета на счет",
-            "from": "Счет 46363668439560358409",
-            "to": "Счет 18889008294666828266"
-        },
-        {
-            "id": 667307132,
-            "state": "EXECUTED",
-            "date": "2019-07-13T18:51:29.313309",
-            "operationAmount": {
-                "amount": "97853.86",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
-            "description": "Перевод с карты на счет",
-            "from": "Maestro 1308795367077170",
-            "to": "Счет 96527012349577388612"
-        }
+def test_data():
+    return[
+        {"date": "2019-08-26T10:50:58.294041",
+         "description": "Перевод организации",
+         "from": "Maestro 1596837868705199",
+         "id": 441945886,
+         "operationAmount": {"amount": "31957.58",
+                             "currency": {"code": "RUB", "name": "руб."}},
+         "to": "Счет 64686473678894779589"},
+        {"date": "2019-07-03T18:35:29.512364",
+         "description": "Перевод организации",
+         "id": 41428829,
+         "operationAmount": {"amount": "8221.37",
+                             "currency": {"code": "USD", "name": "USD"}},
+         "state": "EXECUTED",
+         "to": "Счет 35383033474447895560"},
+        {"date": "2018-06-30T02:08:58.425572",
+         "description": "Перевод организации",
+         "from": "Счет 75106830613657916952",
+         "id": 939719570,
+         "operationAmount": {"amount": "9824.07",
+                             "currency": {"code": "USD","name": "USD"}},
+         "state": "EXECUTED",
+         "to": "Счет 11776614605963066702"},
+        {"date": "2019-04-04T23:20:05.206878",
+         "description": "Перевод со счета на счет",
+         "from": "Счет 19708645243227258542",
+         "id": 142264268,
+         "operationAmount": {"amount": "79114.93",
+                             "currency": {"code": "USD","name": "USD"}},
+         "state": "EXECUTED",
+         "to": "Счет 75651667383060284188"},
+        {"date": "2019-03-23T01:09:46.296404",
+         "description": "Перевод со счета на счет",
+         "from": "Счет 44812258784861134719",
+         "id": 873106923,
+         "operationAmount": {"amount": "43318.34",
+                             "currency": {"code": "RUB","name": "руб."}},
+         "state": "EXECUTED",
+         "to": "Счет 74489636417521191160"}
     ]
+
 
